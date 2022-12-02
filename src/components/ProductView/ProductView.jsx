@@ -41,7 +41,7 @@ const Productview = () => {
             totalPrice: getTotalPrice(addedItems),
             queryId,
         }
-        fetch('http://uzum.probot.uz/web-data', {
+        fetch('https://uzum.probot.uz/web-data', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
