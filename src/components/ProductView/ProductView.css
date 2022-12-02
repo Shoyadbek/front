@@ -1,0 +1,37 @@
+.title-view {
+    font-weight: 700;
+    font-size: 26px;
+}
+.rating {
+    margin:20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price .n-price {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.price .o-price {
+    color: #7C7C7C;
+    font-size: 12px;
+    margin-left: 20px;
+}
+
+.line {
+    height: 2px;
+    background-color: #DADADA;
+    margin: 20px 0;
+}
+
+.rating .left {
+    margin-right: 10px;
+}
+
+.basket {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0; 
+}

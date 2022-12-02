@@ -3,16 +3,22 @@ import './ProductList.css';
 import ProductItem from "../ProductItem/ProductItem";
 import {useTelegram} from "../../hooks/useTelegram";
 import {useCallback, useEffect} from "react";
+import productImg from '../../images/product.jpeg'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import Header from '../Header/Header';
 
 const products = [
-    {id: '1', title: 'Джинсы', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '2', title: 'Куртка', price: 12000, description: 'Зеленого цвета, теплая'},
-    {id: '3', title: 'Джинсы 2', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '4', title: 'Куртка 8', price: 122, description: 'Зеленого цвета, теплая'},
-    {id: '5', title: 'Джинсы 3', price: 5000, description: 'Синего цвета, прямые'},
-    {id: '6', title: 'Куртка 7', price: 600, description: 'Зеленого цвета, теплая'},
-    {id: '7', title: 'Джинсы 4', price: 5500, description: 'Синего цвета, прямые'},
-    {id: '8', title: 'Куртка 5', price: 12000, description: 'Зеленого цвета, теплая'},
+    {id: '1', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000', oldPrice: '950 000' },
+    {id: '2', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '3', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '4', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '5', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '6', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '7', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
+    {id: '8', img: productImg, title: 'Смартфон ZTE Blade A3 2020 1/32GB Grey', price: '769 000',  oldPrice: '950 000' },
 ]
 
 const getTotalPrice = (items = []) => {
@@ -71,16 +77,58 @@ const ProductList = () => {
     }
 
     return (
-        <div className={'list'}>
+        <Container>
+            <Header/>
+        <Tabs
+      defaultActiveKey="profile"
+      id="uncontrolled-tab-example"
+      className="mt-3">
+      <Tab eventKey="home" title="Скидки">
+      <Row>
             {products.map(item => (
                 <ProductItem
+                    img={item.productImg}
                     key={item.id}
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
                 />
             ))}
-        </div>
+            </Row>
+      </Tab>
+      <Tab eventKey="profile" title="Популярное">
+      <Row>
+            {products.map(item => (
+                <ProductItem
+                    img={item.productImg}
+                    key={item.id}
+                    product={item}
+                    onAdd={onAdd}
+                    className={'item'}
+                />
+            ))}
+            </Row>
+      </Tab>
+      <Tab eventKey="contact" title="Новинки">
+      <Row>
+            {products.map(item => (
+                <ProductItem
+                    img={item.productImg}
+                    key={item.id}
+                    product={item}
+                    onAdd={onAdd}
+                    className={'item'}
+                />
+            ))}
+            </Row>
+      </Tab>
+    </Tabs>
+    </Container>
+        
+            
+            
+            
+        
     );
 };
 
